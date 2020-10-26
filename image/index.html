@@ -706,12 +706,12 @@
 <h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
 <h3 id="create-minimal-images">Create minimal images<a class="headerlink" href="#create-minimal-images" title="Permanent link">&para;</a></h3>
 <p>Start by removing all extraneous binaries from the container image.  If you’re using an unfamiliar image from Dockerhub, inspect the image using an application like <a href="https://github.com/wagoodman/dive">Dive</a> which can show you the contents of each of the container’s layers.  Remove all binaries with the SETUID and SETGID bits as they can be used to escalate privilege and consider removing all shells and utilities like nc and curl that can be used for nefarious purposes. You can find the files with SETUID and SETGID bits with the following command:</p>
-<div class="codehilite"><pre><span></span><code>find / -perm +6000 -type f -exec ls -ld <span class="o">{}</span> <span class="se">\;</span>
+<div class="codehilite"><pre><span></span><code>find / -perm /6000 -type f -exec ls -ld <span class="o">{}</span> <span class="se">\;</span>
 </code></pre></div>
 
 
 <p>To remove the special permissions from these files, add the following directive to your container image:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">RUN</span> find / -xdev -perm +6000 -type f -exec chmod a-s <span class="o">{}</span> <span class="se">\;</span> <span class="o">||</span> true
+<div class="codehilite"><pre><span></span><code><span class="k">RUN</span> find / -xdev -perm /6000 -type f -exec chmod a-s <span class="o">{}</span> <span class="se">\;</span> <span class="o">||</span> true
 </code></pre></div>
 
 

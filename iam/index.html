@@ -339,6 +339,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#create-the-cluster-with-a-dedicated-iam-role" class="md-nav__link">
+    Create the cluster with a dedicated IAM role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#regularly-audit-access-to-the-cluster" class="md-nav__link">
     Regularly audit access to the cluster
   </a>
@@ -717,6 +724,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#create-the-cluster-with-a-dedicated-iam-role" class="md-nav__link">
+    Create the cluster with a dedicated IAM role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#regularly-audit-access-to-the-cluster" class="md-nav__link">
     Regularly audit access to the cluster
   </a>
@@ -912,6 +926,8 @@
 <li>Leave the cluster endpoint public and specify which CIDR blocks can communicate with the cluster endpoint. The blocks are effectively a whitelisted set of public IP addresses that are allowed to access the cluster endpoint.</li>
 <li>Configure public access with a set of whitelisted CIDR blocks and set private endpoint access to enabled. This will allow public access from a specific range of public IPs while forcing all network traffic between the kubelets (workers) and the Kubernetes API through the cross-account ENIs that get provisioned into the cluster VPC when the control plane is provisioned.</li>
 </ul>
+<h3 id="create-the-cluster-with-a-dedicated-iam-role">Create the cluster with a dedicated IAM role<a class="headerlink" href="#create-the-cluster-with-a-dedicated-iam-role" title="Permanent link">&para;</a></h3>
+<p>When you create an Amazon EKS cluster, the IAM entity user or role, such as a federated user that creates the cluster, is automatically granted <code>system:masters</code> permissions in the cluster's RBAC configuration. This access cannot be removed and is not managed through the <code>aws-auth</code> ConfigMap. Therefore it is a good idea to create the cluster with a dedicated IAM role and regularly audit who can assume this role. This role should not be used to perform routine actions on the cluster, and instead additional users should be granted access to the cluster through the <code>aws-auth</code> ConfigMap for this purpose. After the <code>aws-auth</code> ConfigMap is configured, the role can be deleted and only recreated in an emergency / break glass scenario where the <code>aws-auth</code> ConfigMap is corrupted and the cluster is otherwise inaccessible. This can be particularly useful in production clusters which do not usually have direct user access configured.</p>
 <h3 id="regularly-audit-access-to-the-cluster">Regularly audit access to the cluster<a class="headerlink" href="#regularly-audit-access-to-the-cluster" title="Permanent link">&para;</a></h3>
 <p>Who requires access is likely to change over time. Plan to periodically audit the <code>aws-auth</code> ConfigMap to see who has been granted access and the rights they've been assigned. You can also use open source tooling like <a href="https://github.com/aquasecurity/kubectl-who-can">kubectl-who-can</a>, or <a href="https://github.com/FairwindsOps/rbac-lookup">rbac-lookup</a> to examine the roles bound to a particular service account, user, or group. We'll explore this topic further when we get to the section on <a href="../detective/">auditing</a>.  Additional ideas can be found in this <a href="https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2019/august/tools-and-methods-for-auditing-kubernetes-rbac-policies/?mkt_tok=eyJpIjoiWWpGa056SXlNV1E0WWpRNSIsInQiOiJBT1hyUTRHYkg1TGxBV0hTZnRibDAyRUZ0VzBxbndnRzNGbTAxZzI0WmFHckJJbWlKdE5WWDdUQlBrYVZpMnNuTFJ1R3hacVYrRCsxYWQ2RTRcL2pMN1BtRVA1ZFZcL0NtaEtIUDdZV3pENzNLcE1zWGVwUndEXC9Pb2tmSERcL1pUaGUifQ%3D%3D">article</a> from NCC Group. </p>
 <h3 id="alternative-approaches-to-authentication-and-access-management">Alternative Approaches to Authentication and Access Management<a class="headerlink" href="#alternative-approaches-to-authentication-and-access-management" title="Permanent link">&para;</a></h3>
