@@ -822,7 +822,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>With soft-multi-tenancy, tenants retain the ability to query CoreDNS for all services that run within the cluster by default. An attacker could exploit this by running dig SRV <em>.</em>.svc.cluster.local from any pod in the cluster.  If you need to restrict access to DNS records of services that run within your clusters, consider using the Firewall or Policy plugins for CoreDNS. For additional information, see https://github.com/coredns/policy#kubernetes-metadata-multi-tenancy-policy. </p>
+<p>With soft-multi-tenancy, tenants retain the ability to query CoreDNS for all services that run within the cluster by default. An attacker could exploit this by running dig SRV <em>.</em>.svc.cluster.local from any pod in the cluster.  If you need to restrict access to DNS records of services that run within your clusters, consider using the Firewall or Policy plugins for CoreDNS. For additional information, see <a href="https://github.com/coredns/policy#kubernetes-metadata-multi-tenancy-policy">https://github.com/coredns/policy#kubernetes-metadata-multi-tenancy-policy</a>. </p>
 </div>
 <p><a href="https://github.com/kiosk-sh/kiosk">Kiosk</a> is an open source project that can aid in the implementation of soft multi-tenancy.  It is implemented as a series of CRDs and controllers that provide the following capabilities: </p>
 <ul>
@@ -876,7 +876,7 @@
 <p>Sandboxing is a technique by which each container is run in its own isolated virtual machine. Technologies that perform pod sandboxing include <a href="https://firecracker-microvm.github.io/">Firecracker</a> and Weave's <a href="https://www.weave.works/blog/firekube-fast-and-secure-kubernetes-clusters-using-weave-ignite">Firekube</a>.</p>
 <p>If you are building your own self-managed Kubernetes cluster on AWS, you may be able to configure alternate container runtimes such as <a href="https://github.com/kata-containers/documentation/wiki/Initial-release-of-Kata-Containers-with-Firecracker-support">Kata Containers</a>.</p>
 <p>For additional information about the effort to make Firecracker a supported runtime for EKS, see
-https://threadreaderapp.com/thread/1238496944684597248.html. </p>
+<a href="https://threadreaderapp.com/thread/1238496944684597248.html">https://threadreaderapp.com/thread/1238496944684597248.html</a>. </p>
 <h3 id="open-policy-agent-opa-gatekeeper">Open Policy Agent (OPA) &amp; Gatekeeper<a class="headerlink" href="#open-policy-agent-opa-gatekeeper" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/open-policy-agent/gatekeeper">Gatekeeper</a> is a Kubernetes admission controller that enforces policies created with <a href="https://www.openpolicyagent.org/">OPA</a>. With OPA you can create a policy that runs pods from tenants on separate instances or at a higher priority than other tenants. A collection of common OPA policies can be found in the GitHub <a href="https://github.com/aws/aws-eks-best-practices/tree/master/policies/opa">repository</a> for this project. </p>
 <p>There is also an experimental <a href="https://github.com/coredns/coredns-opa">OPA plugin for CoreDNS</a> that allows you to use OPA to filter/control the records returned by CoreDNS. </p>
