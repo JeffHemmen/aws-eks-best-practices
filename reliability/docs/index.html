@@ -712,14 +712,16 @@
 <h2 id="how-to-use-this-guide">How to use this guide<a class="headerlink" href="#how-to-use-this-guide" title="Permanent link">&para;</a></h2>
 <p>This guide is meant for developers and architects who want to develop and operate highly-available and fault-tolerant services in EKS. The guide is organized into different topic areas for easier consumption. Each topic starts with a brief overview, followed by a list of recommendations and best practices for reliability your EKS clusters.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>The reliability best practices for EKS have been grouped under the following topics:
-* Control Plane 
-* Network Management
-* Data Plane Management
-* Automated Scaling
-* Automated Recovery
-* Observability
-* Resource Management</p>
+<p>The reliability best practices for EKS have been grouped under the following topics:</p>
+<ul>
+<li>Control Plane </li>
+<li>Network Management</li>
+<li>Data Plane Management</li>
+<li>Automated Scaling</li>
+<li>Automated Recovery</li>
+<li>Observability</li>
+<li>Resource Management</li>
+</ul>
 <p>What makes a system reliable? If a system is able to function consistently and meet demands inspite of changes in its environment over a period of time, then it can be called reliable. To get to this state, the system has to detect failures, automatically heal itself and have the ability to scale based on demand. </p>
 <p>Customers can use Kubernetes as a foundation to operate mission-critical applications and services reliably. But aside from incorporating container-based application design principles, running workloads reliably also requires a reliable infrastructure. In Kubernetes, infrastructure comprises control plane and data plane. </p>
 <p>EKS provides a production-grade Kubernetes control plane that is designed to be highly-available and fault-tolerant. </p>
