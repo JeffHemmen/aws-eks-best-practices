@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tags-reliability" class="md-skip">
+        <a href="#eks-control-plane" class="md-skip">
           Skip to content
         </a>
       
@@ -558,9 +558,111 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Control Plane
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Control Plane" class="md-nav__link md-nav__link--active">
       Control Plane
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eks-architecture" class="md-nav__link">
+    EKS Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-control-plane-metrics" class="md-nav__link">
+    Monitor Control Plane Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor Control Plane Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-server" class="md-nav__link">
+    API Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcd" class="md-nav__link">
+    etcd
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-authentication" class="md-nav__link">
+    Cluster Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-cluster-upgrades" class="md-nav__link">
+    Handling Cluster Upgrades
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-large-clusters" class="md-nav__link">
+    Running large clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#know-limits-and-service-quotas" class="md-nav__link">
+    Know limits and service quotas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -611,6 +713,92 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eks-architecture" class="md-nav__link">
+    EKS Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-control-plane-metrics" class="md-nav__link">
+    Monitor Control Plane Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor Control Plane Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-server" class="md-nav__link">
+    API Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcd" class="md-nav__link">
+    etcd
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-authentication" class="md-nav__link">
+    Cluster Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-cluster-upgrades" class="md-nav__link">
+    Handling Cluster Upgrades
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-large-clusters" class="md-nav__link">
+    Running large clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#know-limits-and-service-quotas" class="md-nav__link">
+    Know limits and service quotas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -629,10 +817,7 @@
                   
                 
                 
-                <p>===========================</p>
-<h6 id="tags-reliability">tags: <code>reliability</code><a class="headerlink" href="#tags-reliability" title="Permanent link">&para;</a></h6>
-<p>===========================</p>
-<h1 id="eks-control-plane">EKS Control Plane<a class="headerlink" href="#eks-control-plane" title="Permanent link">&para;</a></h1>
+                <h1 id="eks-control-plane">EKS Control Plane<a class="headerlink" href="#eks-control-plane" title="Permanent link">&para;</a></h1>
 <p>Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or worker nodes. It runs upstream Kubernetes and is certified Kubernetes conformant. This conformance ensures that EKS supports the Kubernetes APIs, just like the open-source community version that you can install on EC2 or on-premises. Existing applications running on upstream Kubernetes are compatible with Amazon EKS.</p>
 <p>EKS automatically manages the availability and scalability of the Kubernetes control plane nodes, and it automatically replaces unhealthy control plane nodes.</p>
 <h2 id="eks-architecture">EKS Architecture<a class="headerlink" href="#eks-architecture" title="Permanent link">&para;</a></h2>

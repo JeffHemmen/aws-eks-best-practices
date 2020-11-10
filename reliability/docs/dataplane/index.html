@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tags-reliability" class="md-skip">
+        <a href="#eks-data-plane" class="md-skip">
           Skip to content
         </a>
       
@@ -570,9 +570,138 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Data Plane
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Data Plane" class="md-nav__link md-nav__link--active">
       Data Plane
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-ec2-auto-scaling-groups-to-create-worker-nodes" class="md-nav__link">
+    Use EC2 Auto Scaling Groups to create worker nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-kubernetes-cluster-autoscaler-to-scale-nodes" class="md-nav__link">
+    Use Kubernetes Cluster Autoscaler to scale nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-over-provisioning-with-cluster-autoscaler" class="md-nav__link">
+    Configure over-provisioning with Cluster Autoscaler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cluster-autoscaler-with-multiple-auto-scaling-groups" class="md-nav__link">
+    Using Cluster Autoscaler with multiple Auto Scaling Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cluster-autoscaler-with-local-storage" class="md-nav__link">
+    Using Cluster Autoscaler with local storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread-worker-nodes-and-workload-across-multiple-azs" class="md-nav__link">
+    Spread worker nodes and workload across multiple AZs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure-capacity-in-each-az-when-using-ebs-volumes" class="md-nav__link">
+    Ensure capacity in each AZ when using EBS volumes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-node-problem-detector" class="md-nav__link">
+    Run node-problem-detector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserving-resources-for-system-and-kubernetes-daemons" class="md-nav__link">
+    Reserving resources for system and Kubernetes daemons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-qos" class="md-nav__link">
+    Implement QoS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement QoS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-resource-quotas-for-namespaces" class="md-nav__link">
+    Configure resource quotas for namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-container-resource-usage-within-a-namespace" class="md-nav__link">
+    Limit container resource usage within a namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -611,6 +740,119 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-ec2-auto-scaling-groups-to-create-worker-nodes" class="md-nav__link">
+    Use EC2 Auto Scaling Groups to create worker nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-kubernetes-cluster-autoscaler-to-scale-nodes" class="md-nav__link">
+    Use Kubernetes Cluster Autoscaler to scale nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-over-provisioning-with-cluster-autoscaler" class="md-nav__link">
+    Configure over-provisioning with Cluster Autoscaler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cluster-autoscaler-with-multiple-auto-scaling-groups" class="md-nav__link">
+    Using Cluster Autoscaler with multiple Auto Scaling Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cluster-autoscaler-with-local-storage" class="md-nav__link">
+    Using Cluster Autoscaler with local storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread-worker-nodes-and-workload-across-multiple-azs" class="md-nav__link">
+    Spread worker nodes and workload across multiple AZs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure-capacity-in-each-az-when-using-ebs-volumes" class="md-nav__link">
+    Ensure capacity in each AZ when using EBS volumes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-node-problem-detector" class="md-nav__link">
+    Run node-problem-detector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserving-resources-for-system-and-kubernetes-daemons" class="md-nav__link">
+    Reserving resources for system and Kubernetes daemons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-qos" class="md-nav__link">
+    Implement QoS
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement QoS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-resource-quotas-for-namespaces" class="md-nav__link">
+    Configure resource quotas for namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-container-resource-usage-within-a-namespace" class="md-nav__link">
+    Limit container resource usage within a namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -629,10 +871,7 @@
                   
                 
                 
-                <p>============================</p>
-<h6 id="tags-reliability">tags: <code>reliability</code><a class="headerlink" href="#tags-reliability" title="Permanent link">&para;</a></h6>
-<p>============================</p>
-<h1 id="eks-data-plane">EKS Data Plane<a class="headerlink" href="#eks-data-plane" title="Permanent link">&para;</a></h1>
+                <h1 id="eks-data-plane">EKS Data Plane<a class="headerlink" href="#eks-data-plane" title="Permanent link">&para;</a></h1>
 <p>To operate high-available and resilient applications, you need a highly-available and resilient data plane. An elastic data plane ensures that Kubernetes can scale and heal your applications automatically. A resilient data plane consists of two or more worker nodes, can grow and shrink with the workload, and automatically recover from failures.</p>
 <p>You have two choices for worker nodes with EKS: <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker.html">EC2 instances</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate.html">Fargate</a>. If you choose EC2 instances, you can manage the worker nodes yourself or use <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">EKS managed node groups</a>. You can have a cluster with a mix of managed, self-managed worker nodes, and Fargate. </p>
 <p>EKS on Fargate offers the easiest path to a resilient data plane. Fargate runs each Pod in an isolated compute environment. Each Pod running on Fargate gets its own worker node. Fargate automatically scales the data plane as Kubernetes scales pods. You can scale both the data plane and your workload by using the <a href="https://docs.aws.amazon.com/eks/latest/userguide/horizontal-pod-autoscaler.html">horizontal pod autoscaler</a>.</p>
