@@ -415,8 +415,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-alarms-for-suspicous-events" class="md-nav__link">
-    Create alarms for suspicous events
+  <a href="#create-alarms-for-suspicious-events" class="md-nav__link">
+    Create alarms for suspicious events
   </a>
   
 </li>
@@ -730,8 +730,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-alarms-for-suspicous-events" class="md-nav__link">
-    Create alarms for suspicous events
+  <a href="#create-alarms-for-suspicious-events" class="md-nav__link">
+    Create alarms for suspicious events
   </a>
   
 </li>
@@ -817,7 +817,7 @@
 </div>
 <h3 id="utilize-audit-metadata">Utilize audit metadata<a class="headerlink" href="#utilize-audit-metadata" title="Permanent link">&para;</a></h3>
 <p>Kubernetes audit logs include two annotations that indicate whether or not a request was authorized <code>authorization.k8s.io/decision</code> and the reason for the decision <code>authorization.k8s.io/reason</code>.  Use these attributes to ascertain why a particular API call was allowed. </p>
-<h3 id="create-alarms-for-suspicous-events">Create alarms for suspicous events<a class="headerlink" href="#create-alarms-for-suspicous-events" title="Permanent link">&para;</a></h3>
+<h3 id="create-alarms-for-suspicious-events">Create alarms for suspicious events<a class="headerlink" href="#create-alarms-for-suspicious-events" title="Permanent link">&para;</a></h3>
 <p>Create an alarm to automatically alert you where there is an increase in 403 Forbidden and 401 Unauthorized responses, and then use attributes like <code>host</code>, <code>sourceIPs</code>, and <code>k8s_user.username</code> to find out where those requests are coming from.</p>
 <h3 id="analyze-logs-with-log-insights">Analyze logs with Log Insights<a class="headerlink" href="#analyze-logs-with-log-insights" title="Permanent link">&para;</a></h3>
 <p>Use CloudWatch Log Insights to monitor changes to RBAC objects, e.g. Roles, RoleBindings, ClusterRoles, and ClusterRoleBindings.  A few sample queries appear below: </p>
