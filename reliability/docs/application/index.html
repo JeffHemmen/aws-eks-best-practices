@@ -1154,7 +1154,7 @@
 <h3 id="schedule-replicas-across-nodes">Schedule replicas across nodes<a class="headerlink" href="#schedule-replicas-across-nodes" title="Permanent link">&para;</a></h3>
 <p>Running multiple replicas won’t be very useful if all the replicas are running on the same node, and the node becomes unavailable. Consider using pod anti-affinity to spread replicas of a Deployment across multiple worker nodes. </p>
 <p>You can further improve a typical application’s reliability by running it across multiple AZs. </p>
-<p>The manifest below tells Kubernetes scheduler to <em>prefer</em> to place pods on separate nodes and AZs. It doesn’t require distinct nodes or AZ because if it did, then Kubernetes will not be able to schedule any pods once there is a pod running in each AZ. If your application requires just three replicas, you can use <code>requiredDuringSchedulingIgnoredDuringExecution</code> for <code>topologyKey: failure-domain.beta.kubernetes.io/zone</code>, and Kubernetes scheduler will not schedule two pods in the same AZ.</p>
+<p>The manifest below tells Kubernetes scheduler to <em>prefer</em> to place pods on separate nodes and AZs. It doesn’t require distinct nodes or AZ because if it did, then Kubernetes will not be able to schedule any pods once there is a pod running in each AZ. If your application requires just three replicas, you can use <code>requiredDuringSchedulingIgnoredDuringExecution</code> for <code>topologyKey: topology.kubernetes.io/zone</code>, and Kubernetes scheduler will not schedule two pods in the same AZ.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">piVersion</span><span class="o">:</span> <span class="n">apps</span><span class="o">/</span><span class="n">v1</span>
 <span class="n">kind</span><span class="o">:</span> <span class="n">Deployment</span>
 <span class="n">metadata</span><span class="o">:</span>
@@ -1181,10 +1181,8 @@
                   <span class="n">operator</span><span class="o">:</span> <span class="n">In</span>
                   <span class="n">values</span><span class="o">:</span>
                   <span class="o">-</span> <span class="n">web</span><span class="o">-</span><span class="n">server</span>
-              <span class="n">topologyKey</span><span class="o">:</span> <span class="n">failure</span><span class="o">-</span><span class="n">domain</span><span class="o">.</span><span class="na">beta</span><span class="o">.</span><span class="na">kubernetes</span><span class="o">.</span><span class="na">io</span><span class="o">/</span><span class="n">zone</span>
+              <span class="n">topologyKey</span><span class="o">:</span> <span class="n">topology</span><span class="o">.</span><span class="na">kubernetes</span><span class="o">.</span><span class="na">io</span><span class="o">/</span><span class="n">zone</span>
             <span class="n">weight</span><span class="o">:</span> <span class="mi">100</span>
-        <span class="n">podAntiAffinity</span><span class="o">:</span>
-          <span class="n">preferredDuringSchedulingIgnoredDuringExecution</span><span class="o">:</span>
           <span class="o">-</span> <span class="n">podAffinityTerm</span><span class="o">:</span>
               <span class="n">labelSelector</span><span class="o">:</span>
                 <span class="n">matchExpressions</span><span class="o">:</span>

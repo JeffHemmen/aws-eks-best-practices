@@ -727,8 +727,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-nodelocal-dnscacehe" class="md-nav__link">
-    Use NodeLocal DNSCacehe
+  <a href="#use-nodelocal-dnscache" class="md-nav__link">
+    Use NodeLocal DNSCache
   </a>
   
 </li>
@@ -901,8 +901,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-nodelocal-dnscacehe" class="md-nav__link">
-    Use NodeLocal DNSCacehe
+  <a href="#use-nodelocal-dnscache" class="md-nav__link">
+    Use NodeLocal DNSCache
   </a>
   
 </li>
@@ -1053,7 +1053,7 @@
 <p>CoreDNS has built in support for <a href="https://github.com/coredns/coredns/tree/master/plugin/metrics">Prometheus</a>. You should especially consider monitoring CoreDNS latency (<code>coredns_dns_request_duration_seconds_sum</code>), errors (<code>coredns_dns_response_rcode_count_total</code>, NXDOMAIN, SERVFAIL, FormErr) and CoreDNS Pod’s memory consumption. </p>
 <p>For troubleshooting purposes, you can use kubectl to view CoreDNS logs:</p>
 <p><code>for p in $(kubectl get pods —namespace=kube-system -l k8s-app=kube-dns -o name); do kubectl logs —namespace=kube-system $p; done</code></p>
-<h3 id="use-nodelocal-dnscacehe">Use NodeLocal DNSCacehe<a class="headerlink" href="#use-nodelocal-dnscacehe" title="Permanent link">&para;</a></h3>
+<h3 id="use-nodelocal-dnscache">Use NodeLocal DNSCache<a class="headerlink" href="#use-nodelocal-dnscache" title="Permanent link">&para;</a></h3>
 <p>You can improve the Cluster DNS performance by running <a href="https://kubernetes.io/docs/tasks/administer-cluster/nodelocaldns/">NodeLocal DNSCache</a>. This feature runs a DNS caching agent on cluster nodes as a DaemonSet. All the pods use the DNS caching agent running on the node for name resolution instead of using <code>kube-dns</code> Service. </p>
 <h3 id="configure-cluster-proportional-scaler-for-coredns">Configure cluster-proportional-scaler for CoreDNS<a class="headerlink" href="#configure-cluster-proportional-scaler-for-coredns" title="Permanent link">&para;</a></h3>
 <p>Another method of improving Cluster DNS performance is by <a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-horizontal-autoscaling/#enablng-dns-horizontal-autoscaling">automatically horizontally scaling the CoreDNS Deployment</a> based on the number of nodes and CPU cores in the cluster. <a href="https://github.com/kubernetes-sigs/cluster-proportional-autoscaler/blob/master/README.md">Horizontal cluster-proportional-autoscaler</a> is a container that resizes the number of replicas of a Deployment based on the size of the schedulable data-plane. </p>
